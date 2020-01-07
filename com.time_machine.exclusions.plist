@@ -4,10 +4,17 @@
     <dict>
         <key>Label</key>
         <string>com.time_machine.exclusions</string>
-        <key>Program</key>
-        <string>/usr/local/bin/time_machine_exclusions.sh</string>
+        <key>ProgramArguments</key>
+        <array>
+          <string>/bin/bash</string>
+          <string>/usr/local/bin/time_machine_exclusions.sh</string>
+        </array>
         <key>StartInterval</key>
         <!-- 24 hours = 60 * 60 * 24 -->
-        <integer>86400</integer>
+        <integer>3600</integer>
+        <key>StandardOutPath</key>
+        <string>/tmp/time_machine_exclusions.out</string>
+        <key>StandardErrorPath</key>
+        <string>/tmp/time_machine_exclusions.err</string>
     </dict>
 </plist>
