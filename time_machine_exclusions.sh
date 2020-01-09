@@ -10,11 +10,12 @@ ROOT_DIRS=(
   "${HOME}/Virtual Machines.localized"
   "${HOME}/Documents/Virtual Machines.localized"
   "${HOME}/Library/VirtualBox" "${HOME}/VirtualBox VMs"
+  "${HOME}/.python-virtualenvs"
 )
 
 # Define directories in which could be scattered throughout your home directory
 # that you would want excluded.
-DIRS=("packer_cache" ".vagrant")
+DIRS=("packer_cache" ".vagrant" "venv")
 
 # Define file extensions in which could be scattered throughout your home
 # directory that you would want excluded.
