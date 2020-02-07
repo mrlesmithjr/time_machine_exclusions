@@ -5,8 +5,9 @@ DIR="$(
   cd "$(dirname "$0")" || return
   pwd -P
 )"
+LAUNCH_AGENTS_DIR="${HOME}/Library/LaunchAgents"
 PLIST="com.time_machine.exclusions.plist"
-PLIST_SYMLINK="${HOME}/Library/LaunchAgents/${PLIST}"
+PLIST_SYMLINK="${LAUNCH_AGENTS_DIR}/${PLIST}"
 SCRIPT="time_machine_exclusions.sh"
 SCRIPT_SYMLINK="/usr/local/bin/${SCRIPT}"
 
@@ -25,6 +26,12 @@ else
     rm ${SCRIPT_SYMLINK}
     ln -si "${DIR}/${SCRIPT}" ${SCRIPT_SYMLINK}
   fi
+fi
+
+# Create LaunchAgents directory if it doesn't exist
+if [ ! -d ${LAUNCH_AGENTS_DIR} ]; then
+  echo "Creating ${LAUNCH_AGENTS_DIR}"
+  mkdir -p ${LAUNCH_AGENTS_DIR}
 fi
 
 # Create .plist symlink
