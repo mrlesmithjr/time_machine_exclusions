@@ -15,7 +15,7 @@ ROOT_DIRS=(
 
 # Define directories in which could be scattered throughout your home directory
 # that you would want excluded.
-DIRS=("packer_cache" ".vagrant" "venv")
+DIRS=("packer_cache" ".vagrant" ".venv" "venv")
 
 # Define file extensions in which could be scattered throughout your home
 # directory that you would want excluded.
