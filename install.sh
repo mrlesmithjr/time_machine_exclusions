@@ -18,13 +18,13 @@ fi
 # Create symlink into /usr/local/bin
 if [ ! -L ${SCRIPT_SYMLINK} ]; then
   echo "Creating symlink to ${SCRIPT_SYMLINK}"
-  ln -si "${DIR}/${SCRIPT}" ${SCRIPT_SYMLINK}
+  sudo ln -si "${DIR}/${SCRIPT}" ${SCRIPT_SYMLINK}
 else
   echo "Symlink to ${SCRIPT_SYMLINK} exists, checking."
   if [[ ! "${SCRIPT_SYMLINK}" -ef "${DIR}/${SCRIPT}" ]]; then
     echo "Fixing ${SCRIPT_SYMLINK} symlink path."
-    rm ${SCRIPT_SYMLINK}
-    ln -si "${DIR}/${SCRIPT}" ${SCRIPT_SYMLINK}
+    sudo rm ${SCRIPT_SYMLINK}
+    sudo ln -si "${DIR}/${SCRIPT}" ${SCRIPT_SYMLINK}
   fi
 fi
 
@@ -58,4 +58,4 @@ launchctl load -w "${PLIST_SYMLINK}" && echo "Time Machine exclusions daemon loa
 
 # Run Time Machine exclusions
 echo "Running Time Machine exclusions..."
-"${DIR}/${SCRIPT}"
+# "${DIR}/${SCRIPT}"
