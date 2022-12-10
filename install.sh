@@ -58,4 +58,4 @@ launchctl load -w "${PLIST_SYMLINK}" && echo "Time Machine exclusions daemon loa
 
 # Run Time Machine exclusions
 echo "Running Time Machine exclusions..."
-# "${DIR}/${SCRIPT}"
+"${DIR}/${SCRIPT}"
